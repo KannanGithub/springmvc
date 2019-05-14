@@ -13,6 +13,7 @@
         <module>springmvc-web</module>
         <module>springmvc-core</module>
         <module>springmvc-service</module>
+        <module>springmvc-integration</module>
     </modules>
 
     <description>SpringMVC - Root POM</description>
@@ -79,6 +80,13 @@
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
                 <version>2.19.0</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.dbunit</groupId>
+                <artifactId>dbunit</artifactId>
+                <version>2.5.3</version>
                 <scope>test</scope>
             </dependency>
 
@@ -151,7 +159,8 @@
 
 
             <!--  Web Specific - Required Dependencies -->
-           <dependency>
+
+            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <scope>provided</scope>
@@ -160,9 +169,37 @@
 
             <dependency>
                 <groupId>javax.servlet</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>2.0</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
                 <version>1.2</version>
             </dependency>
+
+            <dependency>
+                <groupId>javax.transaction</groupId>
+                <artifactId>jta</artifactId>
+                <version>1.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.atomikos</groupId>
+                <artifactId>transactions</artifactId>
+                <version>3.9.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.atomikos</groupId>
+                <artifactId>transactions-hibernate3</artifactId>
+                <version>3.9.3</version>
+            </dependency>
+
+
 
             <!--  Database-Hibernate Dependencies -->
             <dependency>

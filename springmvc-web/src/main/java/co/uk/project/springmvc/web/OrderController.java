@@ -1,16 +1,14 @@
 package co.uk.project.springmvc.web;
 
 
-import co.uk.project.springmvc.core.domain.Order;
+import co.uk.project.springmvc.core.domain.Orders;
 import co.uk.project.springmvc.service.OrderService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -26,7 +24,7 @@ public class OrderController {
     private OrderService orderService;
 
     @RequestMapping(value = GET_ALL_PHONE_NUMBERS_FOR_CUSTOMER, method = RequestMethod.GET)
-    public List<Order> getAllOrdersForCustomer(@PathVariable(CUSTOMER_ID) Integer customerId) {
+    public List<Orders> getAllOrdersForCustomer(@PathVariable(CUSTOMER_ID) Integer customerId) {
         if (LOG.isDebugEnabled()) {
             LOG.debug("Enter: getAllOrdersForCustomer(customerId = [" + customerId + "])");
         }

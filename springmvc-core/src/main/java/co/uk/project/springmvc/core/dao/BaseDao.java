@@ -10,14 +10,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 import javax.persistence.EntityManager;
 
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TemporalType;
 
 public class BaseDao {
 
-    private static final String MORE_THAN_ONE_RESULT_FOUND = "More than one result found";
-    private static final String NO_RESULTS_FOUND = "No results found";
     protected EntityManager em;
+
+    public BaseDao() {
+    }
+
+    @PersistenceContext
+    public void setEntityManager(EntityManager em) {
+        this.em = em;
+    }
 
     protected <T> List<T> namedSearch(String queryName, Map<String, Object> params) {
         EntityManager em = this.em;
